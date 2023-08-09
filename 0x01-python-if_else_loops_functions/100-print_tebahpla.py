@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-char = ''
+ascii_val = 0
 for i in range(122, 96, -1):
     if i % 2 != 0:
-        char = chr(i-32)
+        ascii_val = i - 32
     else:
-        char = chr(i)
-    print("{}".format(char), end="")
+        ascii_val = i
+    print("{}".format(chr(ascii_val)), end="")

@@ -31,10 +31,14 @@ int is_palindrome(listint_t **head)
 	while (left < right)
 	{
 		if (arr[left] != arr[right])
+		{
+			free(arr);
 			return (0);
+		}
 		left++;
 		right--;
 	}
+	free(arr);
 	return (1);
 }
 

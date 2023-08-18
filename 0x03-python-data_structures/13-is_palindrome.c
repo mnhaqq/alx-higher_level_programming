@@ -10,9 +10,13 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *ptr;
-	int i, left, right, len_list = len_listint(*head);
-	int arr[len_list];
+	int i, left, right;
+	int len_list = len_listint(*head);
+	int *arr;
 
+	arr = malloc(sizeof(int) * len_list);
+	if (arr == NULL)
+		return (1);
 	ptr = *head;
 	i = 0;
 	while (ptr != NULL)
@@ -39,7 +43,7 @@ int is_palindrome(listint_t **head)
  * @h: pointer to head node
  * Return: number of node
  */
-size_t len_listint(const listint_t *h)
+int len_listint(const listint_t *h)
 {
 	const listint_t *ptr;
 	int n;
